@@ -1,16 +1,21 @@
+import Head from "next/head";
 import React from 'react'
-
+import { BsEnvelope } from "react-icons/bs";
+import styles from '../styles/About.module.css'
 export default function About() {
   return (
     <>
+    <Head>
+        <title>JobTeens | Sobre nós</title>
+    </Head>
     <main>
-      <section className="container-fluid bgSobre px-4">
+      <section className={`container-fluid ${styles.bgSobre} px-4`}>
         <h1>Conectando Jovens ao Sucesso Profissional</h1>
       </section>
       <section>
         <div className="container-fluid px-4 py-5">
           <h2>Sobre nós</h2>
-          <p className="paragrafy">
+          <p className={`${styles.paragrafy}`}>
             Somos um espaço criado especialmente para jovens como você, que estão
             buscando oportunidades incríveis de emprego e qualificação para
             alcançar seus sonhos. Acreditamos que todos merecem ter a chance de
@@ -18,14 +23,14 @@ export default function About() {
             circunstâncias.
           </p>
           <h2>Nossa Missão</h2>
-          <p className="paragrafy">
+          <p className={`${styles.paragrafy}`}>
             É conectar jovens talentosos, como você, a empregadores que valorizam
             o potencial e a energia que os jovens trazem para o mercado de
             trabalho. Queremos ser a ponte que leva você ao emprego dos seus
             sonhos, oferecendo uma plataforma intuitiva e acessível para fazer o
             seu cadastro e encontrar vagas que combinem com o seu perfil.
           </p>
-          <p className="paragrafy">
+          <p className={`${styles.paragrafy}`}>
             Para os empregadores, nosso objetivo é facilitar a busca por jovens
             talentos promissores. Com nosso sistema de cadastro simples e
             eficiente, você poderá encontrar candidatos altamente motivados e com
@@ -37,7 +42,7 @@ export default function About() {
             sucesso no mercado de trabalho.
           </p>
           <h2>Aqui, a sua história é importante para nós!</h2>
-          <p className="paragrafy">
+          <p className={`${styles.paragrafy}`}>
             Queremos saber o que você conquistou e como podemos ajudar ainda mais.
             Mensalmente, estaremos em contato através de formulários de pesquisa
             para acompanhar o seu progresso e entender como podemos melhorar ainda
@@ -51,8 +56,7 @@ export default function About() {
           <h4 className="pt-4">Contate-nos</h4>
           <div className="row pt-3">
             <div className="col-md-3 d-flex">
-              <i className="bi bi-telephone me-2" />
-              <p>(XX) 99999-9999</p>
+              <p><BsEnvelope className=" me-2" />(XX) 99999-9999</p>
             </div>
             <div className="col-md-3 d-flex">
               <i className="bi bi-envelope me-2" />

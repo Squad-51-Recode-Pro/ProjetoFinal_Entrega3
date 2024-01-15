@@ -1,0 +1,10 @@
+.bgSobre {
+	background: url(/img/bg_sobre.jpg) no-repeat center/cover;
+	height: 22rem;
+	padding: 170px 0 0 0;
+	color: var(--text-color-white);
+	border-radius: 0px 0px 14px 14px !important;
+}
+.paragrafy {
+	text-align: justify;
+}
