@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+	--bg-color: #18d39a;
+	--text-color-black: black;
+	--text-color-white: white;
+	--text-color-green: #18d39a;
+	--text-color-darkblue: #476370;
+	--color-btn: #18d39a;
+	--bg-color-Two: #476370;
+	--bg-color-Three: #f3fcf9;
+	--bg-color-For: #ffff;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+
+.main_container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.main_container main {
+	flex: 1;
+}

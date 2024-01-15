@@ -1,0 +1,175 @@
+/** component carousel styles **/
+.title_carousel {
+  margin-bottom: 150px;
+}
+
+.title_carousel span {
+  color: var(--text-color-green);
+  font-weight: 800;
+}
+
+.title_carousel h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.title_carouselTwo {
+  margin-bottom: 100px;
+}
+
+.title_carouselTwo h1 {
+  font-weight: 600;
+}
+
+.btn_carousel {
+  background-color: var(--bg-color);
+  color: var(--text-color-white);
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+.btn_carousel:hover {
+  background-color: var(--bg-color);
+  filter: brightness(0.9);
+  transition: filter 0.5s ease;
+}
+
+.img_carousel {
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  max-height: auto;
+  filter: brightness(0.6);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+/** component card_benefits styles **/
+.container_section {
+  margin-top: 80px;
+  margin-bottom: 99px;
+}
+
+.title_card {
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 39px;
+}
+
+.card_content {
+  background-color: var(--bg-color);
+  border: 0;
+  height: 200px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+@media (min-width: 774px) and (max-width: 990px) {
+  .card_content {
+    height: 230px;
+  }
+}
+
+.card_content:hover {
+  transform: scale(1.05) !important;
+  transition: 0.3s ease-in-out !important;
+}
+
+.card_content h6 {
+  font-weight: 500;
+  color: var(--text-color-white);
+}
+
+.icon_card_section {
+  font-size: 60px;
+  color: var(--text-color-white);
+  margin-bottom: 19px;
+}
+
+/** component section_vacancies styles **/
+.section_content {
+  background-color: #edfffaec;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  border-radius: 15px;
+  border-radius: 15px;
+}
+
+.section_content div h1 {
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.card_hover:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+  cursor:default;
+}
+
+.main_heading {
+  color: var(--text-color-green);
+}
+
+.icon_carousel_card {
+  font-size: 28px;
+  margin-right: 7px;
+}
+
+.icon_carousel_card_two {
+  color: var(--text-color-green);
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.header_carousel_card {
+  background-color: #476370;
+  color: var(--text-color-white);
+  font-weight: 500;
+  padding: 11px 15px;
+  display: flex;
+  align-items: center;
+  border: 0;
+}
+
+.body_carousel_card {
+  padding: 18px 23px;
+  text-align: justify;
+}
+
+.body_carousel_card h5 {
+  font-weight: 700;
+}
+
+.body_carousel_card small {
+  display: flex;
+  align-items: center;
+}
+
+/** component section_areas styles **/
+.section_content_areas {
+  padding-top: 99px;
+  padding-bottom: 99px;
+}
+
+.main_heading_areas {
+  text-align: center;
+  padding-bottom: 55px;
+}
+
+.main_heading_areas span {
+  text-decoration: underline;
+  text-decoration-color: var(--text-color-green) !important;
+  text-decoration-thickness: 5px !important;
+  text-underline-offset: 10px;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+.container_section_table {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.container_section_table h1 {
+  border-left: 5px solid;
+  border-color: var(--bg-color);
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 35px;
+}
+
+.container_create {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn_create {
+  background-color: var(--bg-color-Two);
+  color: var(--text-color-white);
+  font-weight: 600;
+  border-top-right-radius: 22px;
+  border-bottom-left-radius: 22px;
+  padding: 9px 30px;
+  text-decoration: none;
+  margin-bottom: 35px;
+  font-size: 20px;
+  transition: .5s;
+}
+
+.btn_create:hover {
+  background-color: #51798c;
+}
+
+.btn_edit {
+  background-color: #6da0b7;
+  color: var(--text-color-white);
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 8px 17px;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.btn_edit:hover {
+  background-color: #648595;
+}
+
+.btn_delete {
+  background-color: rgb(241, 25, 25);
+  color: var(--text-color-white);
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 8px 17px;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.btn_delete:hover {
+  background-color: rgb(195, 33, 33);
+}

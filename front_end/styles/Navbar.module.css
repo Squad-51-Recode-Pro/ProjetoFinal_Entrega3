@@ -1,0 +1,70 @@
+.title {
+  text-decoration: none;
+  font-weight: 700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: var(--text-color-green) !important;
+  cursor: pointer;
+}
+
+.title span:hover {
+  color: var(--text-color-green) !important;
+  filter: brightness(0.9);
+  transition: filter 0.5s ease;
+}
+
+.nav {
+  font-size: 17px;
+  padding-right: 22px !important;
+  font-weight: 600 !important;
+}
+
+.nav:hover {
+  text-decoration: underline !important;
+  text-decoration-color: var(--text-color-green) !important;
+  text-decoration-thickness: 3px !important;
+  text-underline-offset: 7px;
+}
+
+.icon_menu {
+  font-size: 38px;
+  color: var(--color-btn);
+}
+
+.register a:hover {
+  color: var(--text-color-green);
+}
+
+.icon_access {
+  font-size: 19px;
+  margin: 0 2px 2px 0;
+}
+
+.icon_dropdown {
+  font-size: 18px;
+  margin: 0 2px 5px 0;
+}
+
+.btn_group {
+  background-color: var(--bg-color);
+  color: var(--text-color-white) !important;
+  font-weight: 600;
+  padding: 9px 10px;
+  transition: .5s;
+}
+
+.btn_group:hover {
+  background-color: var(--bg-color-Two) !important;
+}
+
+.btn_groupTwo {
+  background-color: var(--bg-color-Three) !important;
+  color: var(--text-color-green) !important;
+  font-weight: 600;
+  padding: 9px 10px;
+  transition: .5s;
+}
+
+.btn_groupTwo:hover {
+  color: var(--text-color-darkblue) !important;
+}
