@@ -1,15 +1,16 @@
-import Head from "next/head";
-import React, { useEffect, useState } from "react";
-import styles from "@/styles/Form.module.css";
-import { useRouter } from "next/router";
-import axios from "axios";
+import axios from 'axios';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react'
+import styles from "@/styles/Form.module.css"
 
-export default function CadastroCandidatura() {
+export default function UpdateCandidatura() {
   const [usuarios, setUsuarios] = useState([]);
   const [vagas, setVagas] = useState([]);
-  const [newCandidatura, setNewCandidatura] = useState({ usuarioId: "", vagaId: "", data_Candidatura: "" });
+  const [candidatura, setCandidatura] = useState({ usuarioId: "", vagaId: "", data_Candidatura: "" });
   const router = useRouter();
-
+  const { codigo } = router.query;
+  
   useEffect(() => {
     const getData = async () => {
       try {
@@ -26,37 +27,48 @@ export default function CadastroCandidatura() {
     getData();
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("https://apijobteens.somee.com/api/candidaturas/" + codigo)
+      .then((response) => {
+        setCandidatura(response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar detalhes do candidatura:", error);
+      });
+  }, [codigo]);
+
   const handleInputChange = (e) => {
-    setNewCandidatura({ ...newCandidatura, [e.target.name]: e.target.value });
+    setCandidatura((prevCandidatura) => ({ ...prevCandidatura, [e.target.name]: e.target.value }));
   };
 
-  const handleAddCandidatura = async (e) => {
+  const handleUpdateCandidatura = async (e) => {
     e.preventDefault();
-
     try {
-      await axios.post("https://apijobteens.somee.com/api/candidaturas", newCandidatura);
+      await axios.put("https://apijobteens.somee.com/api/candidaturas/" + candidatura.candidaturaId, candidatura);
       router.push("/candidatura");
     } catch (error) {
-      alert("Erro ao inserir a candidatura:" + error);
+      console.error("Erro ao atualizar candidatura:", error);
     }
   };
 
   return (
     <>
       <Head>
-        <title>JobTeens | Cadastro Candidatura</title>
+        <title>JobTeens | Atualizar Candidatura</title>
       </Head>
 
       <section className={`container d-flex justify-content-center`}>
         <div className={styles.form_container}>
-          <h1>Candidatar-se</h1>
-          <p> Candidate-se e faça parte do futuro que você deseja construir</p>
+          <h1>Editar</h1>
+          <p>Forneça novos dados cadastrais para a atualização</p>
           <form className={styles.form}>
+          <input type="text" hidden className="form-control" name="candidaturaId" value={codigo} onChange={handleInputChange} />
             <div className="mb-3">
               <label htmlFor="usuarioId" className="form-label">
                 Selecione a usuário
               </label>
-              <select className="form-select" id="usuarioId" name="usuarioId" value={newCandidatura.usuarioId} onChange={handleInputChange}>
+              <select className="form-select" id="usuarioId" name="usuarioId" value={candidatura.usuarioId} onChange={handleInputChange}>
                 <option>Selecione uma opção</option>
                 {usuarios.map((usuario) => (
                   <option value={usuario.usuarioId} key={usuario.usuarioId}>
@@ -70,7 +82,7 @@ export default function CadastroCandidatura() {
               <label htmlFor="vagaId" className="form-label">
                 Selecione o cargo desejado
               </label>
-              <select className="form-select" id="vagaId" name="vagaId" value={newCandidatura.vagaId} onChange={handleInputChange}>
+              <select className="form-select" id="vagaId" name="vagaId" value={candidatura.vagaId} onChange={handleInputChange}>
                 <option>Selecione uma opção</option>
                 {vagas.map((vaga) => (
                   <option value={vaga.vagaId} key={vaga.vagaId}>
@@ -84,11 +96,11 @@ export default function CadastroCandidatura() {
               <label htmlFor="data_Candidatura" className="form-label">
                 Data da candidatura
               </label>
-              <input type="datetime-local" className="form-control" id="data_Candidatura" name="data_Candidatura" value={newCandidatura.data_Candidatura} onChange={handleInputChange} />
+              <input type="datetime-local" className="form-control" id="data_Candidatura" name="data_Candidatura" value={candidatura.data_Candidatura} onChange={handleInputChange}/>
             </div>
 
             <div className="mb-3">
-              <button onClick={(e) => handleAddCandidatura(e)}>Cadastrar</button>
+            <button onClick={(e) => handleUpdateCandidatura(e)}>Cadastrar</button>
             </div>
           </form>
         </div>

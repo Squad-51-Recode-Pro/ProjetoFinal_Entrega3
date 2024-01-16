@@ -44,7 +44,7 @@ export default function CadastroVaga() {
 
       <section className={`container d-flex justify-content-center`}>
         <div className={styles.form_container}>
-          <h1>Cadastrar Vaga</h1>
+          <h1>Cadastro Vaga</h1>
           <p>
             Contribua para o futuro
             <br />
@@ -104,15 +104,7 @@ export default function CadastroVaga() {
               <label htmlFor="descricao" className="form-label">
                 Descrição
               </label>
-              <textarea 
-              className="form-control" 
-              id="descricao" 
-              name="descricao" 
-              value={newVaga.descricao} 
-              onChange={handleInputChange} 
-              placeholder="Informe a descrição" 
-              rows="3">
-              </textarea>
+              <textarea className="form-control" id="descricao" name="descricao" value={newVaga.descricao} onChange={handleInputChange} placeholder="Informe a descrição" rows="3"></textarea>
             </div>
 
             <div className="mb-3">

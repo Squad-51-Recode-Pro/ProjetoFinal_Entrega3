@@ -38,7 +38,7 @@ namespace jobteens_api.Controllers
         {
             var vaga = await _context.Vagas
             .Include(e => e.Empresa)
-            .FirstOrDefaultAsync(e => e.EmpresaId == id);
+            .FirstOrDefaultAsync(v => v.VagaId == id);
 
             if (vaga == null)
             {

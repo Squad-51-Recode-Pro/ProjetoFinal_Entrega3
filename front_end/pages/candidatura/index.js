@@ -57,8 +57,10 @@ export default function Candidatura() {
                           <td>{new Date(candidatura.data_Candidatura).toLocaleString("pt-BR")}</td>
                               
                           <td className="d-flex gap-2">
-                            <Link className={styles.btn_edit} href={""}> Editar</Link>
-                            <Link className={styles.btn_delete} href={""}> Excluir</Link>
+                          <Link className={styles.btn_edit} href={`candidatura/update-candidatura/${candidatura.candidaturaId}`}>
+                              Editar
+                            </Link>
+                            <Link className={styles.btn_delete} href={`candidatura/delete-candidatura/${candidatura.candidaturaId}`}> Excluir</Link>
                           </td>
                         </tr>
                       ))}

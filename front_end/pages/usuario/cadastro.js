@@ -38,7 +38,7 @@ export default function CadastroUsuario() {
               <label htmlFor="nome" className="form-label">
                 Nome
               </label>
-              <input type="text" className="form-control" id="nome" name="nome"  value={newUsuario.nome} 
+              <input type="text" className="form-control" id="nome" name="nome" value={newUsuario.nome} 
               onChange={handleInputChange} placeholder="Informe o seu nome" />
             </div>
 

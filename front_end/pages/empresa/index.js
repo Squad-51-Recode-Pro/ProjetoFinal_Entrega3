@@ -57,10 +57,10 @@ export default function Empresa() {
                           <td>{empresa.area_Atuacao}</td>
                           <td>{empresa.endereco}</td>
                           <td className="d-flex gap-2">
-                            <Link className={styles.btn_edit} href={""}>
+                            <Link className={styles.btn_edit} href={`empresa/update-empresa/${empresa.empresaId}`}>
                               Editar
                             </Link>
-                            <Link className={styles.btn_delete} href={""}>
+                            <Link className={styles.btn_delete} href={`empresa/delete-empresa/${empresa.empresaId}`}>
                               Excluir
                             </Link>
                           </td>

@@ -10,7 +10,7 @@
   padding-left: 15px;
 }
 
-.form_container p  {
+.form_container p {
   color: #7b7b7b;
 }
 
@@ -19,11 +19,11 @@
   margin: 2em 0;
 }
 
-.form label{
+.form label {
   font-weight: 600;
 }
 
-.form button{
+.form button {
   background-color: var(--bg-color);
   border: 0;
   color: var(--text-color-white);
@@ -35,7 +35,50 @@
   transition: .5s;
 }
 
-.form button:hover{
+.form button:hover {
   background-color: #1bdda3;
 }
 
+.form_container_delete {
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.form_container_delete button {
+  background-color: rgb(241, 25, 25);
+  border: 0;
+  color: var(--text-color-white);
+  padding: 10px 70px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: .5s;
+}
+
+.form_container_delete button:hover {
+  background-color: rgb(195, 33, 33);
+}
+
+.form_container_delete a {
+  background-color: var(--bg-color);
+  border: 0;
+  color: var(--text-color-white);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: .5s;
+}
+
+.form_container_delete a:hover {
+  filter: brightness(0.9);
+  transition: filter 0.5s ease;
+}
+
+.form_gap {
+  display: grid;
+  justify-content: center;
+  gap: 10px;
+}

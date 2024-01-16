@@ -21,7 +21,7 @@ export default function Vagas() {
       });
   }, []);
 
-  const formatMoney = (price) => {
+  const formatSalario = (price) => {
     return price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   };
 
@@ -79,7 +79,7 @@ export default function Vagas() {
                         <strong>Requisitos: </strong> {vaga.requisitos}
                       </span>
                       <p className="card-text text-muted pt-2">
-                        <strong>Salário: </strong> {formatMoney(vaga.salario)}
+                        <strong>Salário: </strong> {formatSalario(vaga.salario)}
                       </p>
                     </div>
                     <Link className={`btn ${styles.btn_apply}`} href={"candidatura/cadastro"}>

@@ -1,9 +1,7 @@
 import Head from "next/head";
-import styles from "@/styles/Vaga.module.css";
+import styles from "@/styles/Tables.module.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { IoMdLocate, IoIosCalendar } from "react-icons/io";
-import { BsBuildings } from "react-icons/bs";
 import Link from "next/link";
 
 export default function Vaga() {
@@ -20,7 +18,7 @@ export default function Vaga() {
       });
   }, []);
 
-  const formatSalario= (valor) => {
+  const formatSalario = (valor) => {
     return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
   };
 
@@ -30,51 +28,59 @@ export default function Vaga() {
         <title>JobTeens | Vagas</title>
       </Head>
 
-      <section className={`container ${styles.content_section_vacancies}`}>
-        <div className={styles.container_create}>
-          <h1>Vagas</h1>
-          <Link href={"vaga/cadastro"} className={styles.btn_create}>
-            Cadastrar
-          </Link>
-        </div>
-        <div className="row g-4 pt-2">
-          {vagas.map((vaga) => (
-            <div key={vaga.vagaId} className="col-xl-4">
-              <div className={`card ${styles.card_wrapper}`}>
-                <div className={styles.header_card}>
-                  <BsBuildings className={styles.icon_card} /> {vaga.empresa.nome_Empresa}
-                </div>
-                <div className={`card-body ${styles.body_card}`}>
-                  <div>
-                    <h5 className="card-title mb-1">{vaga.cargo}</h5>
-                    <small className="card-text text-muted">
-                      <IoMdLocate className={styles.icon_card_two} /> {vaga.localidade}
-                    </small>
-                  </div>
-                  <div className="mt-3">
-                    <p className="card-text text-muted pt-2">{vaga.descricao}</p>
-                    <span className="card-text text-muted">
-                      <strong>Requisitos: </strong> {vaga.requisitos}
-                    </span>
-                    <p className="card-text text-muted pt-2">
-                      <strong>Salário: </strong> {formatSalario(vaga.salario)}
-                    </p>
-                  </div>
-                  <div className="d-flex gap-2">
-                    <Link className={styles.btn_edit} href={`/update-vaga/${vaga.vagaId}`} >
-                      Editar
-                    </Link>
-                    <Link className={styles.btn_delete} href={"/candidatura"}>
-                      Excluir
-                    </Link>
-                  </div>
-                </div>
-                <div className={styles.footer_card}>
-                  <IoIosCalendar className={styles.icon_card_three} /> <small className="text-muted">{new Date(vaga.data_Publicacao).toLocaleString("pt-BR")}</small>
+      <section className={`container ${styles.container_section_table}`}>
+        <div className="row">
+          <div className="col-sm-12">
+            <div className={styles.container_create}>
+              <h1>Vagas</h1>
+              <Link href={"vaga/cadastro"} className={styles.btn_create}>
+                Cadastrar
+              </Link>
+            </div>
+            <div className={`card border-0 shadow rounded-4 py-2 px-3`}>
+              <div className="card-body">
+                <div className="table-responsive">
+                  <table className="table table-hover table-borderless">
+                    <thead className="card-header">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Localidade</th>
+                        <th scope="col">Sálario</th>
+                        <th scope="col">Requisitos</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Data de Publicação</th>
+                        <th scope="col">Opções</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {vagas.map((vaga) => (
+                        <tr scope="row" key={vaga.vagaId}>
+                          <td>{vaga.vagaId}</td>
+                          <td>{vaga.empresa.nome_Empresa}</td>
+                          <td>{vaga.cargo}</td>
+                          <td>{vaga.localidade}</td>
+                          <td> {formatSalario(vaga.salario)}</td>
+                          <td>{vaga.requisitos}</td>
+                          <td>{vaga.descricao}</td>
+                          <td>{vaga.data_Publicacao}</td>
+                          <td className="d-flex gap-2">
+                            <Link className={styles.btn_edit} href={`vaga/update-vaga/${vaga.vagaId}`}>
+                              Editar
+                            </Link>
+                            <Link className={styles.btn_delete} href={`vaga/delete-vaga/${vaga.vagaId}`}>
+                              Excluir
+                            </Link>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
     </>
