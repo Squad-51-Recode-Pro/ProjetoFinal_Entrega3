@@ -95,7 +95,6 @@
   padding-top: 120px;
   padding-bottom: 120px;
   border-radius: 15px;
-  border-radius: 15px;
 }
 
 .section_content div h1 {
@@ -106,7 +105,7 @@
 .card_hover:hover {
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
-  cursor:default;
+  cursor: default;
 }
 
 .main_heading {
@@ -167,9 +166,22 @@
   line-height: 1.5;
 }
 
+.icon_areas {
+  font-size: 70px;
+  color: var(--text-color-darkblue);
+  padding-bottom: 10px;
+}
 
+.card_areas {
+  border: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 19px;
+  height: 13rem;
+  border-radius: 15px;
+  cursor: default;
+}
 
-
-
-
-
+.card_areas:hover {
+  transform: scale(1.05) !important;
+  transition: 0.5s ease-in-out !important;
+}
