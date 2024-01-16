@@ -12,8 +12,8 @@ export default function CardAreas() {
           <h1>
             #<span>Destaque</span> <strong>áreas profissionais</strong>
           </h1>
-          <div className="row pt-5">
-            <div className="col-md-3">
+          <div className="row pt-5 g-2">
+            <div className="col-lg-3">
               <div class={`card ${styles.card_areas}`}>
                 <div class="card-body">
                   <FaUsersGear className={styles.icon_areas} />
@@ -22,7 +22,7 @@ export default function CardAreas() {
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-lg-3">
               <div class={`card ${styles.card_areas}`}>
                 <div class="card-body">
                   <HiOutlineDesktopComputer className={styles.icon_areas} />
@@ -31,7 +31,7 @@ export default function CardAreas() {
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-lg-3">
               <div class={`card ${styles.card_areas}`}>
                 <div class="card-body">
                   <FaIndustry className={styles.icon_areas} />
@@ -40,7 +40,7 @@ export default function CardAreas() {
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-lg-3">
               <div class={`card ${styles.card_areas}`}>
                 <div class="card-body">
                   <TfiHeadphoneAlt className={styles.icon_areas} />
